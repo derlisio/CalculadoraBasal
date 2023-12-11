@@ -6,6 +6,7 @@
     </head>
     <body>
         <div id="contenedor">
+            
             <div id="calculadora">
                 <div class="contenido">
                     <h1>Hidratación Basal</h1>
@@ -20,11 +21,18 @@
             </div>
             <div id="detalle">
                 <div class="contenido2">
-                    <h1>¿Como se calcula?</h1>
-                    <ul>
+                    <h1>¿Como se calcula?</h1> 
+                    <ul id="Hasta30">
+                        <h2>Si el niño pesa hasta 30 kg se utiliza el siguiente calculo:</h2>
                         <li>De 0kg a 10kg, se calcula 100cc por cada kilo.</li>
                         <li>Se suman 50cc por cada kilo de peso por arriba de 10kg, hasta 20kg</li>
                         <li>De 20kg para arriba, se suman 20cc por cada kilo adicional</li>
+                    </ul>
+                    <ul id="Mas30">
+                        <h2>Si el niño pesa mas de 30 kg se utiliza el siguiente calculo:</h2>
+                        <li>Superficie corporal = ( (peso * 4) + 7) / (peso + 90)</li>
+                        <li>Este resultado se multiplica por 1500 o por 2000 para hallar el valor del volumen diario en cc, y el medico decide cual de los dos resultados utilizar.</li>
+
                     </ul>
                 </div>
             </div>

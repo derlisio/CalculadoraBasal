@@ -27,6 +27,9 @@ h1 {
     width: 50%;
     height: 100%;
     float: left;
+    opacity: 0;
+    transform: scale(0.8);
+    transition: opacity 1s, transform 1s;
 }
 
 #detalle{
@@ -36,6 +39,9 @@ h1 {
     height: 100%;
     float: left;
     color: #f6f5f7;
+    opacity: 0.2;
+    transform: scale(0.8);
+    transition: opacity 1s, transform 1s;
 }
 .contenido{
     /* Estas tres lineas van a centrar el contenido verticalmente dentro de cada div */
@@ -86,4 +92,33 @@ button {
     font-size: 25px;
     margin-bottom: 5px;
     display: none;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s, transform 0.5s;
+}
+
+.resultado.mostrar {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+#calculadora.mostrar {
+    opacity: 1;
+    transform: scale(1);
+}
+
+#detalle.mostrar {
+    opacity: 1;
+    transform: scale(1);
+}
+
+ul li {
+    opacity: 0;
+    transform: translateX(-20px);
+    transition: opacity 0.5s, transform 0.5s;
+}
+
+ul li.mostrar {
+    opacity: 1;
+    transform: translateX(0);
 }

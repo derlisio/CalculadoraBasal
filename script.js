@@ -3,13 +3,17 @@ const ERROR = document.getElementById('error');//parrafo de error
 const FLU = document.getElementById('flu');//parrafo flujo
 const MAN = document.getElementById('man');// parrafo mantenimiento
 const DIA = document.getElementById('dia');
+const HASTA30 = document.getElementById('Hasta30');
+const MAS30 = document.getElementById('Mas30');
 
 CALCULAR.addEventListener('click',calculo)
 
 function calculo(){
-    let peso = document.getElementById('peso').value;
+    let peso = document.getElementById('peso').valueAsNumber;
     if (peso>0){
         if (peso<=30){
+            HASTA30.style.display = 'block'
+            MAS30.style.display = 'none'
             ERROR.style.display = 'none'
             DIA.innerHTML= 'diario: '+ segar(peso) +' cc'
             DIA.style.display='block'
@@ -20,6 +24,8 @@ function calculo(){
             
     
         }else{
+            HASTA30.style.display = 'none'
+            MAS30.style.display = 'block'
             ERROR.style.display = 'none'
             DIA.innerHTML= 'SC*1500: '+ ((superficie(peso)*1500).toFixed(2)) +' cc'
             DIA.style.display='block'
@@ -36,6 +42,10 @@ function calculo(){
         MAN.style.display = 'none';
         DIA.style.display='none'
     }
+    document.querySelectorAll('.resultado').forEach(function(element) {
+        element.classList.add('mostrar');
+    });
+    document.getElementById('detalle').classList.add('mostrar');
 
 
 }
@@ -52,4 +62,11 @@ function segar(valor){
 
 function superficie(valor){
     return ((valor * 4 ) + 7 ) / (valor + 90)
+
 }
+
+document.querySelectorAll('ul li').forEach(function(element) {
+    element.classList.add('mostrar');
+});
+
+document.getElementById('calculadora').classList.add('mostrar');
